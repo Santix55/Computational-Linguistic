@@ -1,0 +1,5 @@
+Training 50%
+80 al 90 % validación
+el último 10% de test
+
+Llega al 96% en test

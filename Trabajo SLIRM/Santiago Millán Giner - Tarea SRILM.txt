@@ -1,0 +1,131 @@
+Santiago Millán Giner
+
+#### EJERCICIO 1 ####
+
+ngram-count -order 1 -kndiscount -lm modelo1 -text dihana.entrenamiento.txt
+ngram-count -order 2 -kndiscount -lm modelo2 -text dihana.entrenamiento.txt
+ngram-count -order 3 -kndiscount -lm modelo3 -text dihana.entrenamiento.txt
+ngram-count -order 4 -kndiscount -lm modelo4 -text dihana.entrenamiento.txt
+ngram-count -order 5 -kndiscount -lm modelo5 -text dihana.entrenamiento.txt
+
+ngram -order 1 -lm modelo1 -ppl dihana.prueba.txt 
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -18957.95 ppl= 97.05049 ppl1= 183.8427
+
+ngram -order 2 -lm modelo2 -ppl dihana.prueba.txt 
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -10016.61 ppl= 11.2163 ppl1= 15.71962
+
+ngram -order 3 -lm modelo3 -ppl dihana.prueba.txt 
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8446.004 ppl= 7.677726 ppl1= 10.20562
+
+ngram -order 4 -lm modelo4 -ppl dihana.prueba.txt 
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8195.209 ppl= 7.226808 ppl1= 9.525396
+
+ngram -order 5 -lm modelo5 -ppl dihana.prueba.txt 
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8220.561 ppl= 7.271161 ppl1= 9.592047
+
+
+
+#### EJERCICIO 2 ####
+
+ngram-count -order 3 -kndiscount -lm modelo3_kn -text dihana.entrenamiento.txt
+ngram-count -order 3 -wbdiscount -lm modelo3_wb -text dihana.entrenamiento.txt
+ngram-count -order 3 -gtdiscount -lm modelo3_gt -text dihana.entrenamiento.txt
+ngram-count -order 3 -ukndiscount -lm modelo3_ukn -text dihana.entrenamiento.txt
+
+ngram -order 3 -lm modelo3_kn -ppl dihana.prueba.txt                            
+ngram -order 3 -lm modelo3_wb -ppl dihana.prueba.txt
+ngram -order 3 -lm modelo3_gt -ppl dihana.prueba.txt
+ngram -order 3 -lm modelo3_ukn -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8780.752 ppl= 8.323726 ppl1= 11.18984
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8528.064 ppl= 7.831292 ppl1= 10.43858
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8446.004 ppl= 7.677726 ppl1= 10.20562
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8432.682 ppl= 7.65308 ppl1= 10.1683
+
+
+ngram-count -order 4 -kndiscount -lm modelo4_kn -text dihana.entrenamiento.txt
+ngram-count -order 4 -wbdiscount -lm modelo4_wb -text dihana.entrenamiento.txt
+ngram-count -order 4 -gtdiscount -lm modelo4_gt -text dihana.entrenamiento.txt
+ngram-count -order 4 -ukndiscount -lm modelo4_ukn -text dihana.entrenamiento.txt
+
+ngram -order 4 -lm modelo4_kn -ppl dihana.prueba.txt
+ngram -order 4 -lm modelo4_wb -ppl dihana.prueba.txt
+ngram -order 4 -lm modelo4_gt -ppl dihana.prueba.txt
+ngram -order 4 -lm modelo4_ukn -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8593.94 ppl= 7.95679 ppl1= 10.62943
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8151.92 ppl= 7.151701 ppl1= 9.412659
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8195.209 ppl= 7.226808 ppl1= 9.525396
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8086.321 ppl= 7.039372 ppl1= 9.24436
+
+
+
+#### EJERCICIO 3 ####
+
+ngram-count -order 3 -wbdiscount -interpolate -lm modelo3_wb_interpolate -text dihana.entrenamiento.txt
+ngram-count -order 3 -kndiscount -interpolate -lm modelo3_kn_interpolate -text dihana.entrenamiento.txt
+
+ngram -order 3 -lm modelo3_wb_interpolate -ppl dihana.prueba.txt
+ngram -order 3 -lm modelo3_kn_interpolate -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8273.679 ppl= 7.364972 ppl1= 9.733208
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8460.502 ppl= 7.704635 ppl1= 10.2464
+
+
+ngram-count -order 4 -wbdiscount -interpolate -lm modelo4_wb_interpolate -text dihana.entrenamiento.txt
+ngram-count -order 4 -kndiscount -interpolate -lm modelo4_kn_interpolate -text dihana.entrenamiento.txt
+
+ngram -order 4 -lm modelo4_kn_interpolate -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -7804.653 ppl= 6.576761 ppl1= 8.555252
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8072.013 ppl= 7.015106 ppl1= 9.208052
+
+
+# Los de Backoff son los mismos usados anteriormente
+ngram -order 3 -lm modelo3_wb -ppl dihana.prueba.txt
+ngram -order 3 -lm modelo3_kn -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8528.064 ppl= 7.831292 ppl1= 10.43858
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8780.752 ppl= 8.323726 ppl1= 11.18984
+
+
+ngram -order 4 -lm modelo4_wb -ppl dihana.prueba.txt
+ngram -order 4 -lm modelo4_kn -ppl dihana.prueba.txt
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8151.92 ppl= 7.151701 ppl1= 9.412659
+file dihana.prueba.txt: 1169 sentences, 8372 words, 0 OOVs
+0 zeroprobs, logprob= -8593.94 ppl= 7.95679 ppl1= 10.62943
+
+
+
+#### EJERCICIO 5 ####
+
+-- Tarea 1 --
+El primer modelo, con un orden 1 presenta una perplejidad muy alta, ya no tiene la información de ninguna de las palabras anteriores.
+Con un orden 2 hasta 4 disminuye la perplejidad, dando mejores resultados, aunque el paso a no información anterior al modelo de bigramas es notable, al añadir aumentar la mejoría aumenta cada vez menos.
+Cuando la perplejidad aumenta de forma poco significativa. Por lo cual aumentar el orden a partir de 4 hace que el modelo no mejore.
+
+-- Tarea 2 --
+Todos los modelos muestran mejoras al aumentar el orden.
+ - Kneser-Ney no modificado presenta los mejores resultados, sobretodo al aumentar el orden.
+ - Good-Turning, el que viene por defecto, presenta un valor muy bueno en orden 3, casi tanto como Kneser-Ney sin modificar, no obstante al aumentar la perplejidad a 4 su disminución no es tan significativa.
+ - Witten bell presenta más perplejidad en orden 3, pero baja significativamente al añadir una palabra más
+ - Kneser-Ney obtiene los peores valores de perplejidad de todos los algoritmos de suavizado.
+
+-- Tarea 3 --
+En todos casos, al añadir interpolación mejoran bastante los resultados en orden 3 y 4.
+Al aplicar interpolación, se puede observar que Witten-Bell da mejores resultados, principalmente con orden 4.
